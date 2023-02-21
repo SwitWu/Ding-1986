@@ -1,0 +1,266 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fixdif}
+\bibliographystyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\title{On a Conformally Invariant Elliptic Equation on $\mathbb{R}^n$}
+\author{Ding Weiyue}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  For $n\geq 3$, the equation $\Delta u + |u|^{4/(n-2)}u = 0$
+  on $\mathbb{R}^n$ has infinitely many distinct solutions with finite
+  energy and which change sign.
+\end{abstract}
+
+In \cite{gidas1979symmetry}, Gidas-Ni-Nirenberg proved that any positive solution of the elliptic equation
+\begin{equation}\label{eq:1}
+  \Delta u+|u|^{4 /(n-2)} u=0, \quad u \in C^2\left(\mathbb{R}^n\right), \quad n \geq 3,
+\end{equation}
+which has finite energy, namely
+\begin{equation}\label{eq:2}
+  \int_{\mathbb{R}^n}|\nabla u|^2 \d x<\infty,
+\end{equation}
+is necessarily of the form
+\begin{equation}\label{eq:3}
+  u(x)=\left(\frac{\sqrt{n(n-2)} a}{a^2+|x-\xi|^2}\right)^{(n-2)/2},  
+\end{equation}
+where $a>0$, $\xi \in \mathbb{R}^n$. Thereafter, some people tried to show without success that all the 
+solutions of the problem \eqref{eq:1}--\eqref{eq:2}, which are positive somewhere, are given by \eqref{eq:3}.
+Their efforts have to be in vain, as we will see shortly that the problem actually has a lot 
+of solutions other than those given by \eqref{eq:3}.
+Our main result in this note can be stated as follows.
+
+
+\begin{theorem}
+  There exists a sequence of solutions $u_k$ of \eqref{eq:1}--\eqref{eq:2},
+  such that $\int_{\mathbb{R}^n}\left|\nabla u_k\right|^2 \d x \rightarrow \infty$
+  as $k \rightarrow \infty$.
+\end{theorem}
+
+We remark that Eq.~\eqref{eq:1} is invariant under the conformal transformations of $\mathbb{R}^n$.
+Thus, if $u(x)$ is a solution, then for any $\lambda>0$ and $\xi \in \mathbb{R}^n$,
+$\lambda^{(n-2) / 2} u[(x-\xi) / \lambda]$ is also a solution.
+Moreover, all solutions obtained in this way have the same energy,
+and we will say that these solutions are equivalent.
+In particular, the solutions \eqref{eq:3} are equivalent.
+Our theorem implies the existence of infinitely many inequivalent
+solutions to the problem \eqref{eq:1}--\eqref{eq:2}.
+
+The proof of Theorem consists of two steps.
+In Sect.~1 we reduce the problem to an equivalent problem on $S^n$, the Euclidean $n$-sphere.
+Then, in Sect.~2, we show how the latter problem can be solved by some standard variational 
+techniques. In this process, the abundant symmetries of $S^n$ play an important role.
+
+\section*{Section 1}
+
+We first recall some general facts concerning certain elliptic equations on
+Riemannian manifolds. Let $(M, g)$ and $(N, h)$ be two Riemannian manifolds of
+dimension $n \geq 3$. Suppose that there is a conformal diffeomorphism $f$ from $M$ onto $N$, 
+i.e., $f^* h=\varphi^{4 /(n-2)} g$ for some positive function $\varphi \in C^{\infty}(M)$.
+The scalar curvatures of $(M, g)$ and $(N, h)$ are $R_g$ and $R_h$ respectively.
+Consider an equation on $M$ as follows:
+
+\begin{equation}\label{eq:4}
+  \Delta_g u-\beta R_g(x) u+F(x, u)=0, \quad u \in C^2(M),  
+\end{equation}
+where $\Delta_g$ is the Laplacian on $(M, g)$, $\beta=(n-2) / 4(n-1)$,
+and $F: M \times \mathbb{R} \rightarrow \mathbb{R}$ is smooth.
+Corresponding to \eqref{eq:4} is the equation on $N$:
+
+\begin{equation}\label{eq:5}
+  \Delta_h v-\beta R_h(y) v+\tilde{\varphi}(y)^{1-q} F\left(f^{-1}(y), \tilde{\varphi}(y) v\right)=0, \quad v \in C^2(N),  
+\end{equation}
+where $q=2 n /(n-2)$ and $\tilde{\varphi}=\varphi \circ f^{-1}$.
+
+\begin{lemma}\label{lemma:1}
+  Suppose that $v$ is a solution of \eqref{eq:5}. Then $u=(v \circ f) \varphi$ is
+  a solution of \eqref{eq:4} such that $\int_M|u|^q \d V_g=\int_N|v|^q \d V_h$.
+\end{lemma}
+
+\begin{proof}
+  Notice that $f$ is an isometry between $\left(M, f^* h\right)$ and $(N, h)$. So we may assume, without loss of generality, that $\left(M, f^* h\right)=(N, h)$, i.e. $N=M$ and $f=i d$. In such case we have $h=\varphi^{q-2} g$ and $\tilde{\varphi}=\varphi$, while the relation between $R_g$ and $R_h$ is given by
+  \begin{equation}\label{eq:6}
+    \Delta_g \varphi-\beta R_g \varphi+\beta R_h \varphi^{q-1}=0 .    
+  \end{equation}
+  Set $u=v \varphi$. In a local coordinate system on $M$ we compute,
+  
+  \begin{equation}\label{eq:7}
+    \begin{aligned}
+    \Delta_h v & =|h|^{-1 / 2} \partial_j\left(|h|^{1 / 2} h^{i j} \partial_i(u / \varphi)\right) \\
+    & =\varphi^{-q}|g|^{-1 / 2} \partial_j\left(\varphi^2|g|^{1 / 2} g^{i j} \partial_i(u / \varphi)\right) \\
+    & =\varphi^{-q}\left(\varphi \Delta_g u-u \Delta_g \varphi\right) .
+    \end{aligned}
+  \end{equation}
+  Here, $|g|=\det\left(g_{ij}\right)$ and $|h|=\det\left(h_{ij}\right)$.
+  Combining (5), \eqref{eq:6}, and \eqref{eq:7}, we see that $u$ satisfies
+  Eq.~\eqref{eq:4}.
+  Finally, since $\d V_h = \varphi^q \d V_g$ and $u=v \varphi$,
+  we have $\int_M|u|^q \d V_g=\int_M|v|^q \d V_h$.
+\end{proof}
+
+
+\begin{lemma}\label{lemma:2}
+  Every solution $v$ of the equation
+  \begin{equation}\label{eq:8}
+    \Delta v-\frac{1}{4} n(n-2) v+|v|^{q-2} v=0, \quad v \in C^2\left(S^n\right),  
+  \end{equation}
+  where $\Delta$ is the Laplacian with respect to the standard metric on $S^n$,
+  corresponds to a solution $u$ of Eq.~\eqref{eq:1} satisfying
+  \begin{equation}\label{eq:9}
+    \int_{\mathbb{R}^n}|\nabla u|^2 \d x=\int_{S^n}|v|^q \d V.  
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  Let $\pi: S^n-\{p\} \rightarrow \mathbb{R}^n$ be the stereographic projection,
+  where $p$ is the north pole of $S^n$.
+  Then $f=\pi^{-1}$ is a conformal diffeomorphism from $\mathbb{R}^n$ onto $S^n-\{p\}$.
+  Note that the scalar curvatures on $\mathbb{R}^n$ and $S^n$ are constant 0 and $n(n-1)$ respectively. 
+  Thus, applying Lemma 1, we see that every solution $v$ of \eqref{eq:8} corresponds to
+  a solution $u$ of \eqref{eq:1} satisfying
+  \begin{equation}\label{eq:10}
+    \int_{\mathbb{R}^n}|u|^q \d x=\int_{S^n}|v|^q \d V<\infty .  
+  \end{equation}
+  It can be shown that \eqref{eq:10} implies that
+  \begin{equation}\label{eq:11}
+    \int_{\mathbb{R}^n}|\nabla u|^2 \d x=\int_{\mathbb{R}^n}|u|^q \d x .  
+  \end{equation}
+  (Cf.~the proof of Theorem 4.4 in \cite{wei1985elliptic}.) Clearly, \eqref{eq:9} follows from \eqref{eq:10} and \eqref{eq:11}.
+\end{proof}
+
+
+\section*{Section 2}
+
+From Lemma \ref{lemma:2} we see that the proof of
+Theory can be reduced to the proof of the following
+
+\begin{lemma}\label{lemma:3}
+  There exists a sequence $\left\{v_k\right\}$ of solutions of Eq.~\eqref{eq:8},
+  such that $\int_{S^n}\left|v_k\right|^q \d V \rightarrow \infty$ as $k \rightarrow \infty$.
+\end{lemma}
+
+Note first that solutions of Eq.~\eqref{eq:8} are in one to one correspondence with the 
+critical points of the functional
+\[
+J(v)=\int_{S^n}\left[\frac{1}{2}\left(|\nabla v|^2+c v^2\right)-\frac{1}{q}|v|^q\right] \d V
+\]
+in $H^1(S^n)$, where $c=\frac{1}{4} n(n-2)$.
+Recall that $q=2 n /(n-2)$ is just the critical exponent for the embedding $H^1(S^n) \subset L^p\left(S^n\right)$, $1 \leq p \leq q$. 
+Therefore, the functional $J$ is well defined and differentiable in $H^1(S^n)$,
+but it fails to satisfy the Palais-Smale compactness condition in $H^1(S^n)$.
+However, from the analysis in Ambrosetti and Rabinowitz \cite{ambrosetti1973dual} we see that the following
+result holds.
+
+\begin{lemma}\label{lemma:4}
+  Let $X$ be a closed subspace of $H^1(S^n)$.
+  Suppose that the embedding $X \subset L^q(S^n)$ is compact.
+  Then the restriction of $J$ on $X, J|_X$, satisfies the Palais-Smale condition. 
+  Furthermore, if $X$ is infinite-dimensional, then $J|_X$ has a sequence of critical 
+  points $v_k$ in $X$, such that $\int_{S^n}\left|v_k\right|^q \d V \rightarrow \infty$
+  as $k \rightarrow \infty$.
+\end{lemma}
+
+For a proof of Lemma \ref{lemma:4},
+the reader is referred to the proofs of Theorems 3.13 and 3.14 in \cite{ambrosetti1973dual}.
+
+In order to find critical points of $J(v)$, we observe that $S^n$ enjoys a lot of symmetries, 
+namely, the compact Lie group $O(n+1)$ acts isometrically on $S^n$.
+Also, the functional $J$ is invariant under isometries of $S^n$.
+Suppose that $G$ is a compact subgroup of $O(n+1)$. We set
+\[
+X_G=\left\{v \in H^1(S^n): v(g x)=v(x), \forall g \in G \text { and a.e. } x \in S^n\right\} .
+\]
+Then, by the symmetric criticality principle \cite{palais1979principle},
+any critical point of the restriction $J|_{X_G}$ is a critical point of $J$ too.
+Therefore, we may apply Lemma~\ref{lemma:4} to prove Lemma~\ref{lemma:3},
+provided an infinite-dimensional subspace $X_G$ can be found
+so that the embedding $X_G \subset L^q(S^n)$ is compact.
+It turns out that such $X_G$ exists.
+
+Let $\mathbb{R}^{n+1} = \mathbb{R}^k \times \mathbb{R}^m = 
+  \left\{(x, y): x \in \mathbb{R}^k, y \in \mathbb{R}^m\right\}$,
+where $k+m=n+1$, $k \geq m \geq 2$. Then
+\[
+S^n=\left\{(x, y):|x|^2+|y|^2=1\right\} .
+\]
+Let $G=O(k) \times O(m) \subset O(n+1)$. For $g=\left(g_1, g_2\right) \in G$,
+where $g_1 \in O(k)$ and $g_2 \in O(m)$,
+the action of $G$ on $S^n$ is defined by $g(x, y)=\left(g_1 x, g_2 y\right)$.
+With this choice of $G$, we see that $X_G$ is an infinite-dimensional closed subspace of 
+$H^1(S^n)$. Furthermore, we have
+
+\begin{lemma}\label{lemma:5}
+  For $r=2 k /(k-2)>2 n /(n-2)$, $1 \leq p \leq r$,
+  we have the continuous embedding $X_G \subset L^p\left(S^n\right)$.
+  The embedding is compact if $1 \leq p<r$.
+\end{lemma}
+
+\begin{proof}
+  Notice first that if $u \in X_G$, then $u=u(|x|,|y|)$, i.e.\! $u$ depends only on $|x|$,
+  or equivalently, $u$ depends only on $|y|$, since $|x|^2+|y|^2=1$.
+  Now, for any $\bar{z}=(\bar{x}, \bar{y}) \in S^n$, assume first that $\bar{y} \neq 0$.
+  Then $\bar{y}_i \neq 0$ for some $1 \leq i \leq m$. Set
+  \[
+  h(x, y)=\left(x_1, \ldots, x_k, y_1, \ldots, y_{i-1}, y_{i+1}, \ldots, y_m\right) \in \mathbb{R}^n .
+  \]
+  Then there exists a neighborhood $U$ of $\bar{z}$ in $S^n$ and $\delta>0$ such that $h$ maps $U$ diffeomorphically onto the open set $B_\delta^k(\bar{x}) \times B_\delta^{m-1}(\tilde{y})$ in $\mathbb{R}^n$, where
+  \[
+  \tilde{y} = \left(\bar{y}_1, \ldots, \bar{y}_{i-1}, \bar{y}_{i+1}, \ldots, \bar{y}_m\right) \in \mathbb{R}^{m-1}.
+  \]
+  Note that in the chart $(U, h)$, if $u \in X_G$ then $u$ depends only on $|x|$, where $x \in B_\delta^k(\bar{x})$. Next, if $\bar{y}=0$, then $\bar{x}_i \neq 0$ for some $1 \leq i \leq k$. We can likewise take a chart in which $u \in X_G$ depends only on $|y|$, where $y \in B_\delta^m(\bar{y})$.
+
+  We may assume that $S^n$ is covered by a finite number of such charts,
+  say $\left(U_\alpha, h_\alpha\right)$, $1 \leq \alpha \leq N$,
+  and that the metric matrices in these charts satisfies
+  \[
+  c^{-1} I \leq\left(g_{i j}^\alpha\right) \leq c I, \quad 1 \leq \alpha \leq N,
+  \]
+  where $c>1$ is a constant and $I$ is the $n \times n$ identity matrix. Since the functions in $X_G$ behave locally like functions of $k$ or $m$ independent variables in these charts, we have for $s=k$ or $m$,
+  \[
+  \begin{aligned}
+    \int_U|u|^p \d V 
+    & = \int_{B_\delta^s \times B_\delta^{n-s}}|u|^p 
+      \sqrt{\det\left(g_{i j}\right)} \d x \d y \\
+    & \leq c_1 \int_{B_\delta^s \times B_\delta^{n-s}}|u(x)|^p \d x \d y \\
+    & =c_2 \int_{B_\delta^s}|u(x)|^p \d x,
+  \end{aligned}
+  \]
+  for $u \in X_G$. Hence, there exists a constant $c(\alpha)$ such that
+  \begin{equation}\label{eq:12}
+    \|u\|_{L^p(U_\alpha)} \leq c(\alpha)\|u\|_{L^p(B_\alpha^s)}.  
+  \end{equation}
+  Similarly, we can prove that
+  \begin{equation}\label{eq:13}
+    \|u\|_{H^1(U_\alpha)} \geq d(\alpha)\|u\|_{H^1(B_\alpha^s)},  
+  \end{equation}
+  for some $d(\alpha)>0$ and all $u \in X_G$. Combining $(12),(13)$ and the Sobolev inequality on $B_\alpha^s$ yields that
+  \[
+  \|u\|_{L^p(U_\alpha)} \leq b(\alpha)\|u\|_{H^1(U_\alpha)}, \quad 1 \leq p \leq 2 s /(s-2),
+  \]
+  for some $b(\alpha)>0$ and all $u \in X_G$. The global inequality now follows easily:
+  \[
+  \|u\|_{L^p\left(S^n\right)} \leq b\|u\|_{H^1(S^n)}, \quad 1 \leq p \leq 2 k /(k-2),
+  \]
+  for all $u \in X_G$. This proves $X_G \subset L^p\left(S^n\right)$ continuously,
+  for $1 \leq p \leq r$. The compactness of the embedding for $1 \leq p<r$ can
+  be derived in a standard way, cf.~e.g.~\cite{aubin1982monge}.
+\end{proof}
+
+By Lemma 5, the embedding $X_G \subset L^q(S^n)$ is compact. Therefore, as remarked before, we may apply Lemma 4 to complete the proof of Lemma 3.
+
+\vspace*{1cm}
+\noindent\textit{Acknowledgement.}
+This work was done while the author visited Nankai Institute of Mathematics, Tianjin,
+in the 1985--86 special year for P.D.E.
+
+\bibliography{ref}
+
+\end{document}
